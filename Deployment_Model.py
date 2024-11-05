@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-final_pl = pickle.load(open(r"estimator1.pkl", 'rb'))
+final_pl = pickle.load(open("estimator1.pkl", 'rb'))
 
 # Streamlit page title
 st.title("Travel Prediction App")
