@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle 
-# Load your pre-trained model (ensure 'final_pl' model is saved in the same directory)
-# Here, we assume that final_pl was trained with OneHotEncoder(handle_unknown='ignore')
+import sklearn
 final_pl = pickle.load(open("estimator1.pkl", 'rb'))
 
 # Streamlit page title
