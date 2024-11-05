@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 
 # Load your pre-trained model (ensure 'final_pl' model is saved in the same directory)
 # Here, we assume that final_pl was trained with OneHotEncoder(handle_unknown='ignore')
-final_pl = pickle.load(open("D:/streamlit/estimator1.pkl", 'rb'))
+final_pl = pickle.load(open("estimator1.pkl", 'rb'))
 
 # Streamlit page title
 st.title("Travel Prediction App")
