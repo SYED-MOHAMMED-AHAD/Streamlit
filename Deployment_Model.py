@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pickle 
-import sklearn
+import pickle
 final_pl = pickle.load(open("estimator1.pkl", 'rb'))
 
 # Streamlit page title
