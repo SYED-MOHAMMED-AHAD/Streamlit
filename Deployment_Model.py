@@ -1,7 +1,14 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.linear_model import RidgeClassifier
 import pickle
-final_pl = pickle.load(open("estimator1.pkl", 'rb'))
+
+# Load pre-trained model and transformer
+model_pipeline = pickle.load(open("estimator1.pkl", "rb"))
 
 # Streamlit page title
 st.title("Travel Prediction App")
@@ -44,7 +51,7 @@ input_data = pd.DataFrame([[num_passengers, sales_channel, trip_type, purchase_l
 if st.button("Predict"):
     try:
         # Predict using the loaded pipeline model
-        predicted_value = final_pl.predict(input_data)
+        predicted_value = model_pipeline.predict(input_data)
         st.write("Predicted Value:", predicted_value[0])
     except ValueError as e:
         st.error("An error occurred during prediction. Please check input values.")
