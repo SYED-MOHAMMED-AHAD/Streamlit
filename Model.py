@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import pickle 
 import numpy as np
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, PowerTransformer
 from sklearn.compose import ColumnTransformer
@@ -8,10 +7,9 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, RidgeClassifier
 from sklearn.preprocessing import LabelEncoder
+import joblib
 
-# Load your pre-trained model (ensure 'final_pl' model is saved in the same directory)
-# Here, we assume that final_pl was trained with OneHotEncoder(handle_unknown='ignore')
-final_pl = pickle.load(open("pickle.pkl", 'rb'))
+final_pl = joblib.load('model.joblib')  # Loading
 
 # Streamlit page title
 st.title("Travel Prediction App")
